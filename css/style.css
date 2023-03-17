@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+  }
+
+h1 {
+    color: red;
+    font-size: 50X;
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    font-family: Helvetica;
+    height: 100vh;
+  }
+
+
