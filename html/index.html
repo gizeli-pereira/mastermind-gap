@@ -4,110 +4,121 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sono&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Mastermind Game</title>
     <script defer src="/js/main.js"></script>
 </head>
 <body>
-    <h1>MASTERMIND GAME</h1>
     <!-- Main board -->
     <main class="mainBoard-grid">
-        <!-- hidden -->
+        <h1>MASTERMIND GAME</h1>
+        <!-- Winning or Losing message -->
+        <div class="winlose-message">Message will appear here</div>
+
+        <!-- hidden code of colors-->
         <div class="random-code">
             <div class="code" id="random1"></div>
             <div class="code" id="random2"></div>
             <div class="code" id="random3"></div>
             <div class="code" id="random4"></div>
         </div>
-        <!-- Winning or Losing message -->
-        <div class="winlose-message"></div>
-       <!-- Buttons for colors which player can click and choose from -->
-        <div class="codepeg-container">
-            <button id="blue"></button>
-            <button id="red"></button>
-            <button id="yellow"></button>
-            <button id="green"></button>
-            <button id="purple"></button>
-            <button id="gray"></button>
-        </div>
-        <!-- Create empty containers to put colors after being picked by player-->
-        <div class="playing-board-container"></div>
-            <div class="guess1">
-                <div class="circle" id="c1"></div>
-                <div class="circle" id="c2"></div>
-                <div class="circle" id="c3"></div>
-                <div class="circle" id="c4"></div>
-            </div>
-            <div class="guess2">
-                <div class="circle" id="c5"></div>
-                <div class="circle" id="c6"></div>
-                <div class="circle" id="c7"></div>
-                <div class="circle" id="c8"></div>
-            </div>
-            <div class="guess3">
-                <div class="circle" id="c9"></div>
-                <div class="circle" id="c10"></div>
-                <div class="circle" id="c11"></div>
-                <div class="circle" id="c12"></div>
-            </div>
-            <div class="guess4">
-                <div class="circle" id="c13"></div>
-                <div class="circle" id="c14"></div>
-                <div class="circle" id="c15"></div>
-                <div class="circle" id="c16"></div>
-            </div>
-            <div class="guess5">
-                <div class="circle" id="c17"></div>
-                <div class="circle" id="c18"></div>
-                <div class="circle" id="c19"></div>
-                <div class="circle" id="c20"></div>
-            </div>
-            <div class="guess6">
-                <div class="circle" id="c21"></div>
-                <div class="circle" id="c22"></div>
-                <div class="circle" id="c23"></div>
-                <div class="circle" id="c24"></div>
-            </div>
 
-        <!-- Create key peg to show wrong and right answers -->
-        <div class="keypeg-container"></div>
-            <div class="result1">
-                <div class="small" id="s1"></div>
-                <div class="small" id="s2"></div>
-                <div class="small" id="s3"></div>
-                <div class="small" id="s4"></div>
+        <!-- Buttons for colors which player can click and choose from -->
+        <div class="codepeg-container">
+            <button class="colorBtn" id="blue"></button>
+            <button class="colorBtn" id="red"></button>
+            <button class="colorBtn" id="yellow"></button>
+            <button class="colorBtn" id="green"></button>
+            <button class="colorBtn" id="purple"></button>
+            <button class="colorBtn" id="grey"></button>
+        </div>
+        <div class="play-area">
+            <!-- Create empty containers to put colors after being picked by player-->
+            <div class="playing-board-container">
+                <div class="guess1">
+                    <div class="circle" id="c1"></div>
+                    <div class="circle" id="c2"></div>
+                    <div class="circle" id="c3"></div>
+                    <div class="circle" id="c4"></div>
+                </div>
+                <div class="guess2">
+                    <div class="circle" id="c5"></div>
+                    <div class="circle" id="c6"></div>
+                    <div class="circle" id="c7"></div>
+                    <div class="circle" id="c8"></div>
+                </div>
+                <div class="guess3">
+                    <div class="circle" id="c9"></div>
+                    <div class="circle" id="c10"></div>
+                    <div class="circle" id="c11"></div>
+                    <div class="circle" id="c12"></div>
+                </div>
+                <div class="guess4">
+                    <div class="circle" id="c13"></div>
+                    <div class="circle" id="c14"></div>
+                    <div class="circle" id="c15"></div>
+                    <div class="circle" id="c16"></div>
+                </div>
+                <div class="guess5">
+                    <div class="circle" id="c17"></div>
+                    <div class="circle" id="c18"></div>
+                    <div class="circle" id="c19"></div>
+                    <div class="circle" id="c20"></div>
+                </div>
+                <div class="guess6">
+                    <div class="circle" id="c21"></div>
+                    <div class="circle" id="c22"></div>
+                    <div class="circle" id="c23"></div>
+                    <div class="circle" id="c24"></div>
+                </div>
             </div>
-            <div class="result2">
-                <div class="small" id="s5"></div>
-                <div class="small" id="s6"></div>
-                <div class="small" id="s7"></div>
-                <div class="small" id="s8"></div>
+                <!-- Create key peg to show wrong and right answers -->
+            
+            <div class="keypeg-container">
+                <div class="result1">
+                    <div class="small" id="s1"></div>
+                    <div class="small" id="s2"></div>
+                    <div class="small" id="s3"></div>
+                    <div class="small" id="s4"></div>
+                </div>
+                <div class="result2">
+                    <div class="small" id="s5"></div>
+                    <div class="small" id="s6"></div>
+                    <div class="small" id="s7"></div>
+                    <div class="small" id="s8"></div>
+                </div>
+                <div class="result3">
+                    <div class="small" id="s9"></div>
+                    <div class="small" id="s10"></div>
+                    <div class="small" id="s11"></div>
+                    <div class="small" id="s12"></div>
+                </div>
+                <div class="result4">
+                    <div class="small" id="s13"></div>
+                    <div class="small" id="s14"></div>
+                    <div class="small" id="s15"></div>
+                    <div class="small" id="s16"></div>
+                </div>
+                <div class="result5">
+                    <div class="small" id="s17"></div>
+                    <div class="small" id="s18"></div>
+                    <div class="small" id="s19"></div>
+                    <div class="small" id="s20"></div>
+                </div>
+                <div class="result6">
+                    <div class="small" id="s21"></div>
+                    <div class="small" id="s22"></div>
+                    <div class="small" id="s23"></div>
+                    <div class="small" id="s24"></div>
+                </div>
             </div>
-            <div class="result3">
-                <div class="small" id="s9"></div>
-                <div class="small" id="s10"></div>
-                <div class="small" id="s11"></div>
-                <div class="small" id="s12"></div>
-            </div>
-            <div class="result4">
-                <div class="small" id="s13"></div>
-                <div class="small" id="s14"></div>
-                <div class="small" id="s15"></div>
-                <div class="small" id="s16"></div>
-            </div>
-            <div class="result5">
-                <div class="small" id="s17"></div>
-                <div class="small" id="s18"></div>
-                <div class="small" id="s19"></div>
-                <div class="small" id="s20"></div>
-            </div>
-            <div class="result6">
-                <div class="small" id="s21"></div>
-                <div class="small" id="s22"></div>
-                <div class="small" id="s23"></div>
-                <div class="small" id="s24"></div>
-            </div>
+               
+        </div>
+        <button class="reset">RESET</button>
     </main>
-    <button class="reset">RESET</button>
+    
 </body>
 </html>
