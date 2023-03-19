@@ -15,7 +15,7 @@ let colorSet; //unique set
 const codepegContainerEl = document.querySelector('.codepeg-container');
 const [...buttonArray] = document.querySelectorAll('.colorBtn');
 
-//
+//Buttons
 const blueEl = document.getElementById('blue');
 const redEl = document.getElementById('red');
 const yellowEl = document.getElementById('yellow');
@@ -38,6 +38,40 @@ const [...resultThree] = document.querySelectorAll('.resultThree .small');
 const [...resultFour] = document.querySelectorAll('.resultFour .small');
 const [...resultFive] = document.querySelectorAll('.resultFive .small');
 const [...resultSix] = document.querySelectorAll('.resultSix .small');
+
+//Random code 
+const randomEl = document.querySelector('.random-code');
+const [...random] = document.querySelectorAll('.random-code .code');
+
+//Color array
+const coloursArray = [
+    'radial-gradient(circle at 10px 10px, blue, rgb(1, 1, 44))',
+    'radial-gradient(circle at 10px 10px, red, rgb(1, 1, 44))',
+    'radial-gradient(circle at 10px 10px, yellow, rgb(1, 1, 44))',
+    'radial-gradient(circle at 10px 10px, green, rgb(1, 1, 44))',
+    'radial-gradient(circle at 10px 10px, purple, rgb(1, 1, 44))',
+    'radial-gradient(circle at 10px 10px, white, rgb(1, 1, 44))'
+  ];
+
+//Guess positions array
+const BoardPosEl = [
+    one,
+    two,
+    three,
+    four,
+    five,
+    six
+];
+
+//Results positions array
+const ResultsPosEl = [
+    resultOne,
+    resultTwo,
+    resultThree,
+    resultFour,
+    resultFive,
+    resultSix 
+];
 
 
 /*----- event listeners -----*/
