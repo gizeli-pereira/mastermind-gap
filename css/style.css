@@ -63,7 +63,7 @@ body {
     margin: .5em 0;
 }
 
-#blue {
+/* #blue {
     background-color: blue;
 }
 
@@ -85,7 +85,7 @@ body {
 
 #grey {
     background-color: grey;
-}
+} */
 
 .playing-board-container > div {
     display: flex;

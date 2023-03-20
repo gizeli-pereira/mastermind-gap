@@ -24,6 +24,20 @@ const greenEl = document.getElementById('green');
 const purpleEl = document.getElementById('purple');
 const greyEl = document.getElementById('grey');
 
+//Background colors for the buttons
+blueEl.style =
+  'background-color: blue';
+redEl.style =
+  'background-color: red';
+yellowEl.style =
+  'background-color: yellow';
+greenEl.style =
+  'background-color: green';
+purpleEl.style =
+  'background-color: purple';
+greyEl.style =
+  'background-color: grey';
+
 //Guesses are put in an array
 const [...one] = document.querySelectorAll('#c1, #c2, #c3, #c4');
 const [...two] = document.querySelectorAll('#c5, #c6, #c7, #c8');
@@ -74,19 +88,7 @@ const resultsPosArray = [
     resultSix 
 ];
 
-//Background colors for the buttons
-blueEl.style =
-  'background-color: blue';
-redEl.style =
-  'background-color: red';
-yellowEl.style =
-  'background-color: yellow';
-greenEl.style =
-  'background-color: green';
-purpleEl.style =
-  'background-color: purple';
-greyEl.style =
-  'background-color: grey';
+
 
 /*----- event listeners -----*/
 colorsEl.addEventListener('click', evt => putOnGuess(evt));
@@ -172,6 +174,17 @@ const checkColors = () => {
 };
 
 const checkResults = () => {
+    winArr.length = 0;
+    resultsPosArray[whichRow].map(pos => {
+        if (pos.style.background !== 'green') {
+            winArr.push(false);
+        } else {
+            winArr.push(true);
+        }
+    });
+
+    
+
     
 };
 
