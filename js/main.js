@@ -4,15 +4,15 @@ window.onload = () => init();
 /*----- app's state (variables) -----*/
 let number = 0;
 let result = 0;
-let secretCodeColor = [];
+let secretCodeColor = []; //four secret colors
 let colorSetArr = [];
-let setCounter = 0; //tells wich row
-let posCounter = 0; //position inside the row
+let whichRow = 0; //tells wich row
+let whereRow = 0; //where in the row
 let winArr = [];
 let colorSet; //unique set
 
 /*----- cached element references -----*/
-const codepegContainerEl = document.querySelector('.codepeg-container');
+const playingContainerEl = document.querySelector('.playing-board-container');
 const [...buttonArray] = document.querySelectorAll('.colorBtn');
 
 //Buttons
@@ -31,7 +31,7 @@ const [...four] = document.querySelectorAll('#c13, #c14, #c15, c16');
 const [...five] = document.querySelectorAll('#c17, #c18, #c19, c20');
 const [...six] = document.querySelectorAll('#c21, #c22, #c23, c24');
 
-//Result are put in an array
+//Results are put in an array
 const [...resultOne] = document.querySelectorAll('.resultOne .small');
 const [...resultTwo] = document.querySelectorAll('.resultTwo .small');
 const [...resultThree] = document.querySelectorAll('.resultThree .small');
@@ -44,17 +44,17 @@ const randomEl = document.querySelector('.random-code');
 const [...random] = document.querySelectorAll('.random-code .code');
 
 //Color array
-const coloursArray = [
-    'radial-gradient(circle at 10px 10px, blue, rgb(1, 1, 44))',
-    'radial-gradient(circle at 10px 10px, red, rgb(1, 1, 44))',
-    'radial-gradient(circle at 10px 10px, yellow, rgb(1, 1, 44))',
-    'radial-gradient(circle at 10px 10px, green, rgb(1, 1, 44))',
-    'radial-gradient(circle at 10px 10px, purple, rgb(1, 1, 44))',
-    'radial-gradient(circle at 10px 10px, white, rgb(1, 1, 44))'
+const colorsPosArray = [
+    'blue',
+    'red',
+    'yellow',
+    'green',
+    'purple',
+    'grey'
   ];
 
 //Guess positions array
-const BoardPosEl = [
+const boardPosArray = [
     one,
     two,
     three,
@@ -64,7 +64,7 @@ const BoardPosEl = [
 ];
 
 //Results positions array
-const ResultsPosEl = [
+const resultsPosArray = [
     resultOne,
     resultTwo,
     resultThree,
@@ -73,13 +73,81 @@ const ResultsPosEl = [
     resultSix 
 ];
 
+//Background colors for the buttons
+blueEl.style =
+  'background-color: blue';
+redEl.style =
+  'background-color: red';
+yellowEl.style =
+  'background-color: yellow';
+greenEl.style =
+  'background-color: green';
+purpleEl.style =
+  'background-color: purple';
+greyEl.style =
+  'background-color: grey';
 
 /*----- event listeners -----*/
-
+playingContainerEl.addEventListener('click', evt => putOnGuess(evt));
 
 /*----- functions -----*/
 
 const init = () => {
+    buttonArray.map(button => (button.disabled = false));
+    randomEl.style = 'opacity: 0';
+    pickColors();
+};
 
-}
+//Creates the secret code color using a random number generator.
+//Put colors in an array to remove any duplicate color, because we need a unique code
+//And sets have unique entries. We check the size of the set and if it is less than four
+//The function try again until we have a unique four code of colors
+const pickColors = () => {
+    for (let i = 0; i < 4; i++ ) {
+        result = getRandomIntInclusive(1, 6);
+        secretCodeColor.push(colorsPosArray[result]);
+    }
+    colorSet = new Set(secretCodeColor);
+    if (colorSet.size < 4) {
+        secretCodeColor.lenght = 0;
+        colorSet.clear();
+    }
+};
+
+//Create a random number
+const getRandomIntInclusive = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    number = Math.floor(Math.random() * (max - min + 1)) + min;
+    return number;
+};
+
+//Click on the color code peg and put on the guess board.
+//The variable whichRow shows witch row the color is.
+//The variable whereRow shows where in the row the color is.
+const putOnGuess = evt => {
+    if (evt.target.tagName === 'BUTTON') {
+        boardPosArray[whichRow][whereRow].style.background = evt.target.style.background;
+        whereRow++;
+        if (whereRow === 4) {
+            checkSequence();
+            checkColors();
+            checkResults();
+            whereRow = 0;
+            whichRow++;
+        }
+    }
+};
+
+const checkSequence = () => {
+    
+};
+
+const checkColors = () => {
+    
+};
+
+const checkResults = () => {
+    
+};
 
