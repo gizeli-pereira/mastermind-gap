@@ -115,7 +115,7 @@ const pickColors = () => {
     }
     colorSet = new Set(secretCodeColor);
     if (colorSet.size < 4) {
-        secretCodeColor.lenght = 0;
+        secretCodeColor.length = 0;
         colorSet.clear();
         init();
     }
