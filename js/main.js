@@ -46,12 +46,12 @@ const [...random] = document.querySelectorAll('.random-code .code');
 
 //Color array
 const colorsPosArray = [
-    blueEl,
-    redEl,
-    yellowEl,
-    greenEl,
-    purpleEl,
-    greyEl
+    'blue',
+    'red',
+    'yellow',
+    'green',
+    'purple',
+    'grey'
   ];
 
 //Guess positions array
@@ -98,7 +98,7 @@ resetBtn.addEventListener('click', () => {
 
 const init = () => {
     buttonArray.map(button => (button.disabled = false));
-    randomEl.style = 'opacity: 0';
+    randomEl.style = 'opacity: 1';
     pickColors();
 };
 
@@ -115,6 +115,7 @@ const pickColors = () => {
     if (colorSet.size < 4) {
         secretCodeColor.lenght = 0;
         colorSet.clear();
+        init();
     }
 };
 
@@ -143,12 +144,31 @@ const putOnGuess = evt => {
     }
 };
 
+//Check correct color and position
 const checkSequence = () => {
-    
+    boardPosArray[whichRow].map((pos1, idx) => {
+     if (pos1.style.background === secretCodeColor[idx]) {
+        resultsPosArray[whichRow][idx].style =
+        'background-color: green';
+     }   
+    });
 };
 
+//Check correct color, but in a wrong position
 const checkColors = () => {
-    
+    resultsPosArray[whichRow].map((pos1,idx1) => {
+        if (pos1.style.background === '') {
+            boardPosArray[whichRow].map((pos2, idx2) => {
+                if (idx1 === idx2) {
+                    secretCodeColor.map(color => {
+                        if (pos2.style.background === color) {
+                            pos1.style = 'background-color: white';
+                        }
+                    });
+                }
+            });
+        }
+    });
 };
 
 const checkResults = () => {
