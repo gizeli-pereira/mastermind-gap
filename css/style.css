@@ -51,8 +51,7 @@ body {
     border-radius: 50%;
 }
 
-.codepeg-cointainer {
-
+.colors {
     display: flex;
     flex-direction: row;
 }

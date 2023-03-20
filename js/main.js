@@ -12,8 +12,9 @@ let winArr = [];
 let colorSet; //unique set
 
 /*----- cached element references -----*/
-const playingContainerEl = document.querySelector('.playing-board-container');
-const [...buttonArray] = document.querySelectorAll('.colorBtn');
+const colorsEl = document.querySelector('.colors');
+const [...buttonArray] = document.querySelectorAll('button');
+const resetBtn = document.querySelector(".reset");
 
 //Buttons
 const blueEl = document.getElementById('blue');
@@ -24,12 +25,12 @@ const purpleEl = document.getElementById('purple');
 const greyEl = document.getElementById('grey');
 
 //Guesses are put in an array
-const [...one] = document.querySelectorAll('#c1, #c2, #c3, c4');
-const [...two] = document.querySelectorAll('#c5, #c6, #c7, c8');
-const [...three] = document.querySelectorAll('#c9, #c10, #c11, c12');
-const [...four] = document.querySelectorAll('#c13, #c14, #c15, c16');
-const [...five] = document.querySelectorAll('#c17, #c18, #c19, c20');
-const [...six] = document.querySelectorAll('#c21, #c22, #c23, c24');
+const [...one] = document.querySelectorAll('#c1, #c2, #c3, #c4');
+const [...two] = document.querySelectorAll('#c5, #c6, #c7, #c8');
+const [...three] = document.querySelectorAll('#c9, #c10, #c11, #c12');
+const [...four] = document.querySelectorAll('#c13, #c14, #c15, #c16');
+const [...five] = document.querySelectorAll('#c17, #c18, #c19, #c20');
+const [...six] = document.querySelectorAll('#c21, #c22, #c23, #c24');
 
 //Results are put in an array
 const [...resultOne] = document.querySelectorAll('.resultOne .small');
@@ -45,12 +46,12 @@ const [...random] = document.querySelectorAll('.random-code .code');
 
 //Color array
 const colorsPosArray = [
-    'blue',
-    'red',
-    'yellow',
-    'green',
-    'purple',
-    'grey'
+    blueEl,
+    redEl,
+    yellowEl,
+    greenEl,
+    purpleEl,
+    greyEl
   ];
 
 //Guess positions array
@@ -88,7 +89,10 @@ greyEl.style =
   'background-color: grey';
 
 /*----- event listeners -----*/
-playingContainerEl.addEventListener('click', evt => putOnGuess(evt));
+colorsEl.addEventListener('click', evt => putOnGuess(evt));
+resetBtn.addEventListener('click', () => {
+    location.reload();
+   });
 
 /*----- functions -----*/
 
@@ -127,7 +131,7 @@ const getRandomIntInclusive = (min, max) => {
 //The variable whereRow shows where in the row the color is.
 const putOnGuess = evt => {
     if (evt.target.tagName === 'BUTTON') {
-        boardPosArray[whichRow][whereRow].style.background = evt.target.style.background;
+        boardPosArray[whichRow][whereRow].style.backgroundColor = evt.target.style.backgroundColor;
         whereRow++;
         if (whereRow === 4) {
             checkSequence();
