@@ -40,20 +40,20 @@ greyEl.style =
   'background-color: grey';
 
 //Guesses are put in an array
-const [...one] = document.querySelectorAll('#c1, #c2, #c3, #c4');
-const [...two] = document.querySelectorAll('#c5, #c6, #c7, #c8');
-const [...three] = document.querySelectorAll('#c9, #c10, #c11, #c12');
-const [...four] = document.querySelectorAll('#c13, #c14, #c15, #c16');
-const [...five] = document.querySelectorAll('#c17, #c18, #c19, #c20');
-const [...six] = document.querySelectorAll('#c21, #c22, #c23, #c24');
+const one = [...document.querySelectorAll('#c1, #c2, #c3, #c4')];
+const two = [...document.querySelectorAll('#c5, #c6, #c7, #c8')];
+const three = [...document.querySelectorAll('#c9, #c10, #c11, #c12')];
+const four = [...document.querySelectorAll('#c13, #c14, #c15, #c16')];
+const five = [...document.querySelectorAll('#c17, #c18, #c19, #c20')];
+const six = [...document.querySelectorAll('#c21, #c22, #c23, #c24')];
 
 //Results are put in an array
-const [...resultOne] = document.querySelectorAll('.resultOne .small');
-const [...resultTwo] = document.querySelectorAll('.resultTwo .small');
-const [...resultThree] = document.querySelectorAll('.resultThree .small');
-const [...resultFour] = document.querySelectorAll('.resultFour .small');
-const [...resultFive] = document.querySelectorAll('.resultFive .small');
-const [...resultSix] = document.querySelectorAll('.resultSix .small');
+const resultOne = [...document.querySelectorAll('#s1, #s2, #s3, #s4')];
+const resultTwo = [...document.querySelectorAll('#s5, #s6, #s7, #s8')];
+const resultThree = [...document.querySelectorAll('#s9, #s10, #s11, #s12')];
+const resultFour = [...document.querySelectorAll('#s13, #s14, #s15, #s16')];
+const resultFive = [...document.querySelectorAll('#s17, #s18, #s19, #s20')];
+const resultSix = [...document.querySelectorAll('#s21, #s22, #s23, #s24')];
 
 //Random code 
 const randomEl = document.querySelector('.random-code');
@@ -151,10 +151,16 @@ const putOnGuess = evt => {
 const checkSequence = () => {
     boardPosArray[whichRow].map((pos1, idx) => {
      if (pos1.style.backgroundColor === secretCodeColor[idx]) {
-        resultsPosArray[whichRow][idx].style.backgroundColor =
+        console.log(true);
+        resultsPosArray[whichRow][idx].style.backgroundColor = 
         'green';
-     }   
-    });
+        console.log(resultsPosArray);
+     } else {
+        console.log(false);
+     } 
+     
+    }); 
+     
 };
 
 //Check correct color, but in a wrong position
