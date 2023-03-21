@@ -182,12 +182,29 @@ const checkColors = () => {
     });
 };
 
+//We check the results to continue playing or to declare the winner.
+//We need four greens in the resultsPosArray to win the game
 const checkResults = () => {
+    winArr.length = 0;
+    resultsPosArray[whichRow].map(pos => {
+        if (pos.style.backgroundColor !== 'green') {
+            winArr.push(false);
+        } else {
+            winArr.push(true);
+        }
+    });
 
+    let win = winArr.reduce((total, x) => x ? total + 1 : total, 0);
 
-    
-
-    //Win with 4 greens
-   
+    //Win with 4 greens or try again message shows up
+   if (win === 4) {
+    messageEl.innerHTML = 'You won!';
+    secretCodeColor.map((color, idx) => {
+        random[idx].style.backgroundColor = color;
+    });
+    randomEl.style = 'opacity: 1';
+   } else {
+    messageEl.innerHTML = 'Try again!';
+   }
 };
 
