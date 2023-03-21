@@ -15,6 +15,7 @@ let colorSet; //unique set
 const colorsEl = document.querySelector('.colors');
 const [...buttonArray] = document.querySelectorAll('button');
 const resetBtn = document.querySelector(".reset");
+const messageEl = document.querySelector('.winlose-message');
 
 //Buttons
 const blueEl = document.getElementById('blue');
@@ -110,7 +111,7 @@ const init = () => {
 //The function try again until we have a unique four code of colors
 const pickColors = () => {
     for (let i = 0; i < 4; i++ ) {
-        result = getRandomIntInclusive(1, 6);
+        result = getRandomIntInclusive(0, 5);
         secretCodeColor.push(colorsPosArray[result]);
     }
     colorSet = new Set(secretCodeColor);
@@ -149,42 +150,36 @@ const putOnGuess = evt => {
 //Check correct color and position
 const checkSequence = () => {
     boardPosArray[whichRow].map((pos1, idx) => {
-     if (pos1.style.background === secretCodeColor[idx]) {
-        resultsPosArray[whichRow][idx].style =
-        'background-color: green';
+     if (pos1.style.backgroundColor === secretCodeColor[idx]) {
+        resultsPosArray[whichRow][idx].style.backgroundColor =
+        'green';
      }   
     });
 };
 
 //Check correct color, but in a wrong position
 const checkColors = () => {
-    resultsPosArray[whichRow].map((pos1,idx1) => {
-        if (pos1.style.background === '') {
-            boardPosArray[whichRow].map((pos2, idx2) => {
-                if (idx1 === idx2) {
-                    secretCodeColor.map(color => {
-                        if (pos2.style.background === color) {
-                            pos1.style = 'background-color: white';
-                        }
-                    });
-                }
-            });
-        }
-    });
+    // resultsPosArray[whichRow].map((pos1,idx1) => {
+    //     if (pos1.style.backgroundColor === '') {
+    //         boardPosArray[whichRow].map((pos2, idx2) => {
+    //             if (idx1 === idx2) {
+    //                 secretCodeColor.map(color => {
+    //                     if (pos2.style.backgroundColor === color) {
+    //                         pos1.style.backgroundColor = 'white';
+    //                     }
+    //                 });
+    //             }
+    //         });
+    //     }
+    // });
 };
 
 const checkResults = () => {
-    winArr.length = 0;
-    resultsPosArray[whichRow].map(pos => {
-        if (pos.style.background !== 'green') {
-            winArr.push(false);
-        } else {
-            winArr.push(true);
-        }
-    });
+
 
     
 
-    
+    //Win with 4 greens
+   
 };
 
