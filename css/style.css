@@ -23,6 +23,11 @@ body {
     text-align: center;
   }
 
+ p {
+    font-size: 11px;
+    text-align: justify;
+  }
+
 .mainBoard-grid {
     display: flex;
     flex-direction: column;
