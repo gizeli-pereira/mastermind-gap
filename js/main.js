@@ -101,7 +101,7 @@ resetBtn.addEventListener('click', () => {
 
 const init = () => {
     buttonArray.map(button => (button.disabled = false));
-    randomEl.style = 'opacity: 1';
+    randomEl.style = 'opacity: 0';
     pickColors();
 };
 
@@ -133,6 +133,8 @@ const getRandomIntInclusive = (min, max) => {
 //Click on the color code peg and put on the guess board.
 //The variable whichRow shows witch row the color is.
 //The variable whereRow shows where in the row the color is.
+//When all the positions in the row are filled (whereRow = 4), 
+//it start checking if colors and positions are right
 const putOnGuess = evt => {
     if (evt.target.tagName === 'BUTTON') {
         boardPosArray[whichRow][whereRow].style.backgroundColor = evt.target.style.backgroundColor;
@@ -147,37 +149,37 @@ const putOnGuess = evt => {
     }
 };
 
-//Check correct color and position
+//Check correct color and right position looping around the row and 
+//comparing colors to the right indexes.
+//If it is the right color with the same background as the secretCodeColor, 
+//mark the small circle (resultsPosArray) with a green backgroundColor
 const checkSequence = () => {
     boardPosArray[whichRow].map((pos1, idx) => {
      if (pos1.style.backgroundColor === secretCodeColor[idx]) {
-        console.log(true);
         resultsPosArray[whichRow][idx].style.backgroundColor = 
         'green';
-        console.log(resultsPosArray);
-     } else {
-        console.log(false);
-     } 
-     
-    }); 
-     
+     }
+    });   
 };
 
-//Check correct color, but in a wrong position
+//Check correct color, but in a wrong position. If the checkSequence() already got us 
+//a correct color and correct position, we only loop around the row and check for empty positions
+//We check the guesses that aren't in the right position 
+//and if that color is right but in the wrong position, we put a white backgroundColor
 const checkColors = () => {
-    // resultsPosArray[whichRow].map((pos1,idx1) => {
-    //     if (pos1.style.backgroundColor === '') {
-    //         boardPosArray[whichRow].map((pos2, idx2) => {
-    //             if (idx1 === idx2) {
-    //                 secretCodeColor.map(color => {
-    //                     if (pos2.style.backgroundColor === color) {
-    //                         pos1.style.backgroundColor = 'white';
-    //                     }
-    //                 });
-    //             }
-    //         });
-    //     }
-    // });
+    resultsPosArray[whichRow].map((pos1,idx1) => {
+        if (pos1.style.backgroundColor === '') {
+            boardPosArray[whichRow].map((pos2, idx2) => {
+                if (idx1 === idx2) {
+                    secretCodeColor.map(color => {
+                        if (pos2.style.backgroundColor === color) {
+                            pos1.style.backgroundColor = 'white';
+                        }
+                    });
+                }
+            });
+        }
+    });
 };
 
 const checkResults = () => {

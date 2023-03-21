@@ -53,6 +53,7 @@ body {
 .colors {
     display: flex;
     flex-direction: row;
+    margin-left: 32px;
 }
 
 .colorBtn {
@@ -62,30 +63,6 @@ body {
     border-radius: 50%;
     margin: .5em 0;
 }
-
-/* #blue {
-    background-color: blue;
-}
-
-#red {
-    background-color: red;
-}
-
-#yellow {
-    background-color: yellow;
-}
-
-#green {
-    background-color: green;
-}
-
-#purple {
-    background-color: purple;
-}
-
-#grey {
-    background-color: grey;
-} */
 
 .playing-board-container > div {
     display: flex;
@@ -117,16 +94,6 @@ body {
     margin: .97em .2em;
     display: flex;
 }
-
-/* .resultRow > * {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border: 2px solid black;
-    border-radius: 50%;
-    margin: .97em .2em;
-    display: flex;
-} */
 
 
 .reset {
