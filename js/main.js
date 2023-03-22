@@ -200,12 +200,13 @@ const checkResults = () => {
     //Win with 4 greens or try again message shows up
    if (win === 4) {
     messageEl.innerHTML = 'You won!';
+    buttonArray.map(button => (button.disabled = true));
     secretCodeColor.map((color, idx) => {
         random[idx].style.backgroundColor = color;
     });
     randomEl.style = 'opacity: 1';
     colorsEl.style = 'opacity: 0';
-    return;
+        return;
    } else {
     messageEl.innerHTML = 'Try again!';
    }
