@@ -6,21 +6,21 @@ How to play: Pick 4 different colors from the code peg. If the color you chose i
 
 ## GAME BEGINS:
 
-![]
+![Start](https://i.imgur.com/NJDT0mS.png "Start Game")
 
 ## WRONG CODE, TRY AGAIN:
 
-![]
+![Wrong code selected](https://i.imgur.com/EqFe1x2.png "Wrong code, try again!")
 
 ## RIGHT CODE WINS. SECRET CODE SHOWS UP AND CODE PEG DISAPPEARS:
 
-![]
+![You won](https://i.imgur.com/vL8pRLO.png "You won!")
 
 ## TECNOLOGIES USED
 
-1. HTML
-1. CSS
-1. JAVASCRIPT
+1. HTML - Structure
+1. CSS - Styling
+1. JAVASCRIPT - Logic
 
 ### YOU CAN PLAY THE GAME HERE: 
 
