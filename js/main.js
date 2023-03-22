@@ -136,6 +136,7 @@ const getRandomIntInclusive = (min, max) => {
 //When all the positions in the row are filled (whereRow = 4), 
 //it start checking if colors and positions are right
 const putOnGuess = evt => {
+    //Guards do nothing unless the buttons are clicked
     if (evt.target.tagName === 'BUTTON') {
         boardPosArray[whichRow][whereRow].style.backgroundColor = evt.target.style.backgroundColor;
         whereRow++;
@@ -203,6 +204,7 @@ const checkResults = () => {
         random[idx].style.backgroundColor = color;
     });
     randomEl.style = 'opacity: 1';
+    colorsEl.style = 'opacity: 0';
    } else {
     messageEl.innerHTML = 'Try again!';
    }
