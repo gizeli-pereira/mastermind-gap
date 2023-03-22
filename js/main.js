@@ -205,8 +205,10 @@ const checkResults = () => {
     });
     randomEl.style = 'opacity: 1';
     colorsEl.style = 'opacity: 0';
+    return;
    } else {
     messageEl.innerHTML = 'Try again!';
    }
+   
 };
 
