@@ -4,9 +4,24 @@ Mastermind or Master Mind is a code-breaking game. It resembles an earlier penci
 
 How to play: Pick 4 different colors from the code peg. If the color you chose is right and, in the right position of the row, the key peg turns green in the asigned position. If it's the right color, but in a wrong position, the key peg turns white. 
 
-GAME BEGINS:
+## GAME BEGINS:
 
-WRONG CODE, TRY AGAIN:
+![]
 
-RIGHT CODE WINS. SECRET CODE SHOWS UP AND CODE PEG DISAPPEARS:
+## WRONG CODE, TRY AGAIN:
 
+![]
+
+## RIGHT CODE WINS. SECRET CODE SHOWS UP AND CODE PEG DISAPPEARS:
+
+![]
+
+## TECNOLOGIES USED
+
+1. HTML
+1. CSS
+1. JAVASCRIPT
+
+### YOU CAN PLAY THE GAME HERE: 
+
+### NEXT STEPS: 
