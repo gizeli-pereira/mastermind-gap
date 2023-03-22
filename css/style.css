@@ -69,6 +69,7 @@ body {
     border: 2px solid black;
     border-radius: 50%;
     margin: .5em 0;
+    cursor: pointer;
 }
 
 .playing-board-container > div {
@@ -110,11 +111,12 @@ body {
     border: 2px solid black;
     border-radius: 25%;
     color: rgb(12, 11, 12);
-    background-color: rgb(162, 173, 189);
+    background-color: rgb(215, 217, 206);
     font-family: 'Sono', sans-serif;
     font-size: 20px;
     align-items: center;
     margin: 1em auto;
+    cursor: pointer;
 }
 
 .play-area {

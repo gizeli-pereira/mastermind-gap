@@ -14,7 +14,7 @@ let colorSet; //unique set
 /*----- cached element references -----*/
 const colorsEl = document.querySelector('.colors');
 const [...buttonArray] = document.querySelectorAll('button');
-const resetBtn = document.querySelector(".reset");
+const resetBtn = document.querySelector('.reset');
 const messageEl = document.querySelector('.winlose-message');
 
 //Buttons
@@ -101,6 +101,7 @@ resetBtn.addEventListener('click', () => {
 
 const init = () => {
     buttonArray.map(button => (button.disabled = false));
+    resetBtn.disabled = false;
     randomEl.style = 'opacity: 0';
     pickColors();
 };
@@ -206,10 +207,9 @@ const checkResults = () => {
     });
     randomEl.style = 'opacity: 1';
     colorsEl.style = 'opacity: 0';
-        return;
+    resetBtn.disabled = false;
    } else {
     messageEl.innerHTML = 'Try again!';
    }
    
 };
-
