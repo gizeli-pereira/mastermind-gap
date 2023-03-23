@@ -10,7 +10,7 @@ How to play: Pick 4 different colors from the code peg. If the color you chose i
 
 ## WRONG CODE, TRY AGAIN:
 
-![Wrong code selected](https://i.imgur.com/EqFe1x2.png "Wrong code, try again!")
+![Wrong code selected](https://i.imgur.com/EqFe1x2.png "Wrong code, try again!") 
 
 ## RIGHT CODE WINS. SECRET CODE SHOWS UP AND CODE PEG DISAPPEARS:
 

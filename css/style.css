@@ -9,7 +9,7 @@ h1 {
 }
 
 body {
-    margin: 100px;
+    margin: 100px auto;
     height: 60vh;
     width: 50vh;
     font-family: 'Sono', sans-serif;
@@ -125,56 +125,4 @@ body {
     display: flex;
     grid-template-columns: 1fr 1fr;
 }
-
-@media only screen and (min-width: 780px) {
-    body {
-        justify-content: start;
-        width: 25vh;
-        grid-template-columns: 1fr 3fr;
-    }
-
-    .keypeg-container > div {
-        display: flex;
-        grid-template-columns: 1fr;
-        align-items: center;
-    }
-
-    .mainBoard-grid {
-        width: 30vh;
-    }
-}
-
-
-@media only screen and (min-width: 900px) {
-    body {
-        justify-content: start;
-        grid-template-columns: 1fr 3fr;
-    }
-
-    .mainBoard-grid {
-        width: 30vh;
-        height: 60vh;
-    }
-
-    p {
-        width: 40vh;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-    body {
-        justify-content: start;
-        grid-template-columns: 1fr 3fr;
-    }
-
-    .mainBoard-grid {
-        width: 30vh;
-        height: 60vh;
-    }
-
-    p {
-        width: 40vh;
-    }
-}
-
 

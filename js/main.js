@@ -198,7 +198,10 @@ const checkResults = () => {
 
     let win = winArr.reduce((total, x) => x ? total + 1 : total, 0);
 
-    //Win with 4 greens or try again message shows up
+    //Win with 4 greens
+    //Win message shows up, code peg selection is disabled and hidden
+    //Secret code shows up
+    //Or "Try Again" message shows up if code is wrong
    if (win === 4) {
     messageEl.innerHTML = 'You won!';
     buttonArray.map(button => (button.disabled = true));
@@ -209,7 +212,6 @@ const checkResults = () => {
     colorsEl.style = 'opacity: 0';
     resetBtn.disabled = false;
    } else {
-    messageEl.innerHTML = 'Try again!';
+        messageEl.innerHTML = 'Try again!';
    }
-   
 };
