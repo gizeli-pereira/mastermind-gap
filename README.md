@@ -22,7 +22,7 @@ How to play: Pick 4 different colors from the code peg. If the color you chose i
 1. CSS - Styling
 1. JAVASCRIPT - Logic
 
-### YOU CAN PLAY THE GAME HERE: 
+### YOU CAN PLAY THE GAME HERE: https://gizeli-pereira.github.io/mastermind-gap/
 
 ### NEXT STEPS: 
 * Add Responsive Design;
