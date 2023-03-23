@@ -1,6 +1,6 @@
 # MASTERMIND 
 
-Mastermind or Master Mind is a code-breaking game. It resembles an earlier pencil and paper game called Bulls and Cows that may date back a century. 
+Mastermind or Master Mind is a code-breaking game. It resembles an earlier pencil and paper game called Bulls and Cows that may date back a century. [Wikipedia](https://en.wikipedia.org/wiki/Mastermind_(board_game))
 
 How to play: Pick 4 different colors from the code peg. If the color you chose is right and, in the right position of the row, the key peg turns green in the asigned position. If it's the right color, but in a wrong position, the key peg turns white. 
 
@@ -25,3 +25,5 @@ How to play: Pick 4 different colors from the code peg. If the color you chose i
 ### YOU CAN PLAY THE GAME HERE: 
 
 ### NEXT STEPS: 
+* Add Responsive Design;
+* Add animation.
